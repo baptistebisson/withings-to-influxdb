@@ -8,6 +8,12 @@ You could use the withings API, but it doesn't look really simple to use with th
 
 It's my first CLI app using GO. I choose this language to learn it, and it seems suitable for creating CLI app.
 
+### Supported data
+
+- steps
+- distance
+- heart
+
 ### Built With
 
 - GO
@@ -59,6 +65,23 @@ cd withings-to-influxdb && cp .env.example .env
 
 ```bash
 go run main.go --folder=/path/to/withings/export
+```
+
+#### Output example
+
+```
+Reading file /path/to/withings/export/raw_tracker_distance.csv
+Found a total of 26286 records in CSV file
+Going to write data to InfluxDB
+Data successfully written to InfluxDB
+Reading file /path/to/withings/export/raw_tracker_steps.csv
+Found a total of 26286 records in CSV file
+Going to write data to InfluxDB
+Data successfully written to InfluxDB
+Reading file /path/to/withings/export/raw_hr_hr.csv
+Found a total of 186246 records in CSV file
+Going to write data to InfluxDB
+Data successfully written to InfluxDB
 ```
 
 ## Withings doc
