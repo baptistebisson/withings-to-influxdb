@@ -23,9 +23,34 @@ You also need an InfluxDB API endpoint available.
 
 ### Installation
 
+- Clone
 
+```bash
+git clone https://github.com/baptistebisson/withings-to-influxdb.git
+```
+
+- Setup env
+
+```bash
+cd withings-to-influxdb && cp .env.example .env
+```
+
+- Run it
+
+```bash
+go run main.go --folder=/path/to/withings/export
+```
+
+## Withings doc
 
 `raw_tracker_steps.csv`: Steps data
 
 - Duration : (seconds)
 - Value : (steps number)
+
+`sleep.csv`: Sleep data
+
+`raw_tracker_distance.csv`: Distance data
+
+- Duration : (seconds)
+- Value : (meters)
