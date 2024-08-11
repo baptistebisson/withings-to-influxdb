@@ -2,7 +2,9 @@
 
 ## About The Project
 
-I wanted to store and keep history of my scanwatch data in influxdb which is a nice and easy database to use to Grafana.
+I wanted to store and keep history of my scanwatch data in influxdb which is a nice and easy database to use with Grafana.
+
+You could use the withings API, but it doesn't look really simple to use with the oauth system.
 
 It's my first CLI app using GO. I choose this language to learn it, and it seems suitable for creating CLI app.
 
