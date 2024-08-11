@@ -11,6 +11,24 @@ It's my first CLI app using GO. I choose this language to learn it, and it seems
 - GO
 - InfluxDB
 
+## Grafana example
+
+![](img/steps.png)
+
+### Query
+
+Total per day.
+
+```sql
+from(bucket: "withings")
+  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
+  |> filter(fn: (r) => r["_measurement"] == "steps")
+  |> filter(fn: (r) => r["_field"] == "count")
+  |> filter(fn: (r) => r["device"] == "scanwatch")
+  |> aggregateWindow(every: 1d, fn: sum)
+  |> yield(name: "total_steps")
+```
+
 ## Getting Started
 
 ### Prerequisites
